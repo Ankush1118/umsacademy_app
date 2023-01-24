@@ -1,0 +1,73 @@
+@import "src/theme/mixins";
+
+ion-tab-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 25px;
+  height: 65px;
+  border: none;
+  box-shadow: 0px -1px 20px 0px rgba(0, 0, 0, 0.04);
+}
+
+ion-tab-bar, ion-tab-button{
+  background-color: var(--ion-color-light);
+}
+
+ion-tab-button {
+  flex: 1;
+  background: white;
+  ion-icon {
+    font-size: 28px;
+  }
+}
+
+ion-tab-button:first-child {
+  border-radius: 25px 0 0 0 !important;
+}
+
+ion-tab-button:last-child {
+  border-radius: 0 25px 0 0 !important;
+}
+
+
+.pop-button-wrapper {
+  flex: 1;
+  background: var(--ion-color-light);
+  height: 100%;
+  @include flex-center();
+}
+
+.pop-button {
+  @include flex-center();
+  @include circlfy(40px);
+  background: var(--ion-color-primary);
+  transition: 0.1s;
+
+  ion-icon {
+    font-size: 20px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.direct {
+  .pop-button {
+    border-radius: 10px;
+    padding: 5px;
+    @include shadow-light();
+    background: var(--ion-color-light);
+    img{
+      border-radius: 8px;
+    }
+  }
+}
+
+.pop-button:hover {
+  cursor: pointer;
+  @include circlfy(45px);
+}
+

@@ -1,0 +1,41 @@
+@import "src/theme/mixins";
+
+.header-wrapper {
+  @include flex-row-between();
+  padding: 5px 20px;
+  margin-bottom: 10px;
+
+  .title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--shade-three);
+  }
+
+  .action-wrapper {
+    @include flex-center();
+
+    button {
+      @include circlfy(30px);
+      @include flex-center();
+      @include shadow-light();
+      background: var(--ion-color-light);
+      margin: 5px;
+      color: var(--shade-three);
+      padding: 0;
+      ion-icon {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.centerTitle {
+  @include flex-center();
+
+  .title {
+    color: var(--shade-two);
+    font-size: 16px;
+  }
+
+}

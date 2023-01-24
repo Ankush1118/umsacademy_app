@@ -1,0 +1,68 @@
+@import "src/theme/mixins";
+
+.header-wrapper{
+  width: 100%;
+  @include flex-center();
+  flex-direction: column;
+  img{
+    width: 140px;
+    margin: 10px;
+  }
+  ion-icon{
+    padding: 20px;
+    @include circlfy(60px);
+    background: var(--ion-color-light);
+    color: var(--ion-color-primary);
+  }
+  h1{
+
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+
+.form-wrapper {
+  @include safe-frame();
+  padding: 15px;
+  input {
+    width: 100%;
+    background: transparent;
+    @include roundify(12px);
+    padding: 12px;
+    margin: 8px auto;
+    border: 1px solid var(--shade-one);
+    background: var(--ion-color-light);
+  }
+
+  button{
+    width: 100%;
+    @include roundify(12px);
+    background: var(--ion-color-primary);
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 20px;
+    @include shadow-light();
+  }
+
+  label {
+    width: 100%;
+    background: transparent;
+    @include roundify(12px);
+    padding: 12px;
+    margin: 8px auto;
+  }
+
+  .errorMsg{
+    width: 100%;
+    background: transparent;
+    // @include roundify(12px);
+    padding: 12px;
+    margin: 4px auto;
+
+  }
+
+
+  .text-danger{color: red;}
+}

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="header-wrapper">
+    <h3>Plan Subscription</h3>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Wallet Balance</ion-card-subtitle>
+      <ion-card-title>Rs. {{walletBalance}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <form [formGroup]="subscribeForm" (ngSubmit)="saveSubscription()">
+    <div class="form-wrapper">
+        <input type="hidden" formControlName="planId">
+        <label class="input-label">Plan Name <span style="color: red;">*</span></label>
+        <input type="text" placeholder="Name" formControlName="planName" disabled="true" required
+        [ngClass]="{ 'is-invalid': submitted && fSubscribe.planName.invalid, 'is-valid': fSubscribe.planName.valid  }">
+        <div *ngIf="submitted && fSubscribe.planName.invalid" class="text-danger">
+          <div *ngIf="fSubscribe.planName.errors.required">Plan Name is required</div>
+        </div>
+        <label class="input-label">Amount <span style="color: red;">*</span></label>
+        <input type="text" placeholder="Amount" formControlName="amount" disabled="true" required
+        [ngClass]="{ 'is-invalid': submitted && fSubscribe.amount.invalid, 'is-valid': fSubscribe.amount.valid  }">
+        <div *ngIf="submitted && fSubscribe.amount.invalid" class="text-danger">
+          <div *ngIf="fSubscribe.amount.errors.required">Amount is required</div>
+        </div>
+        <div *ngIf="walletBalanceLess" class="text-danger">
+          <div>Amount is less than wallet balance. <br>Please recharge your wallet</div>
+        </div>
+        <!-- <label class="input-label">Wallet Balance <span style="color: red;">*</span></label>
+        <input type="text" placeholder="Wallet Balance" formControlName="walletBalance" disabled="true"required
+        [ngClass]="{ 'is-invalid': submitted && fSubscribe.walletBalance.invalid, 'is-valid': fSubscribe.walletBalance.valid  }">
+        <div *ngIf="submitted && fSubscribe.walletBalance.invalid" class="text-danger">
+          <div *ngIf="fSubscribe.walletBalance.errors.required">Wallet Balance is required</div>
+        </div>
+        <label class="input-label">Balance After Payment <span style="color: red;">*</span></label>
+        <input type="text" placeholder="Remaining Amount" formControlName="remainingAmount" disabled="true"required
+        [ngClass]="{ 'is-invalid': submitted && fSubscribe.remainingAmount.invalid, 'is-valid': fSubscribe.remainingAmount.valid  }">
+        <div *ngIf="submitted && fSubscribe.remainingAmount.invalid" class="text-danger">
+          <div *ngIf="fSubscribe.remainingAmount.errors.required">Remianing Amount is required</div>
+        </div>
+        <label class="input-label">End Date <span style="color: red;">*</span></label>
+        <input type="date" placeholder="End Date" formControlName="endDate" disabled="true">
+        <label class="input-label">Wallet Balance</label>
+        <ion-select class="status-wrapper" (ionChange)="checkMode($event.target.value)" formControlName="payment_mode" placeholder="Payment Mode">
+          <ion-select-option text-left value="cash">Cash</ion-select-option>
+          <ion-select-option text-left value="online">Online</ion-select-option>
+        </ion-select>
+        <input placeholder="Transaction Reference No" type="text" *ngIf="isOnline" formControlName="transactionNo"> -->
+        <button type="submit" [disabled]="walletBalanceLess">Pay</button>
+    </div>
+  </form>
+
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar class="transparent-background">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-wrapper">
+
+
+    <div class="header-wrapper">
+      <button></button>
+      <button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </div>
+
+
+    <div class="intro" *ngIf="directIcon == null">
+      <ion-icon src="assets/icon/noun_navigation.svg"></ion-icon>
+      <h1 class="title">Direct Mode</h1>
+      <p>You can redirect your profile to selected link</p>
+    </div>
+
+    <div class="intro direct-wrapper" *ngIf="directIcon">
+      <app-avatar-round [imageUrl]="'assets/item-icons/' + directIcon.iconImageUrl" [isEditMode]="true" [bubbleFilled]="true"
+                        iconUrl="assets/icon/noun_navigation.svg"></app-avatar-round>
+      <h1 class="title">Direct Mode</h1>
+      <p>Your profile will be redirect to {{directIcon.iconName}}</p>
+      <button class="turn-off-button" (click)="turnOffDirectMode()">Turn off</button>
+    </div>
+
+    <div class="social-section-wrapper" *ngFor="let section of sections">
+      <!--      <app-title-action-header [centerTitle]="true" [title]="section.sectionName"></app-title-action-header>-->
+      <div class="grid">
+        <app-icon-label *ngFor="let icon of section.icons" [image]="'assets/item-icons/'+icon.iconImageUrl"
+                        (click)="updateDirectIcon(icon.iconId)"
+                        [label]="icon.iconName"></app-icon-label>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+</ion-content>

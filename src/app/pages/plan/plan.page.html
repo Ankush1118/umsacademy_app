@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <app-title-line-action title="Plans"></app-title-line-action>
+  </ion-toolbar>
+  <app-search-bar [(value)]="searchInput"></app-search-bar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <app-plan-view *ngFor="let clientPlan of clientPlans" [hidden]="checkSearch(clientPlan)" >
+    
+  </app-plan-view> -->
+  <ion-list >
+      <app-plan-view *ngFor="let clientPlan of clientPlans" [hidden]="checkSearch(clientPlan)"  [clientPlan]="clientPlan" (refresh)="refresh()">
+
+      </app-plan-view >
+        
+      <!-- <ion-item>
+       <ion-button  class="pull-right" color="primary">Edit</ion-button>
+       <ion-button  class="pull-right" color="primary" >Delete</ion-button> 
+      </ion-item> -->
+  <!-- <ion-item-sliding *ngFor="let clientPlan of clientPlans" [hidden]="checkSearch(clientPlan)">
+    <ion-item-options side="start">
+      <ion-item-option color="primary" (click)="editClientPlantModel(clientPlan)">
+        Edit
+      </ion-item-option>
+    </ion-item-options>
+    <ion-item>
+      <app-plan-view  [clientPlan]="clientPlan" ></app-plan-view >
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="delete(clientPlan.planId)">
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding> -->
+  </ion-list>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addClientPlanModel()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>

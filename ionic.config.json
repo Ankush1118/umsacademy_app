@@ -1,0 +1,7 @@
+{
+  "name": "UMS Branch",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

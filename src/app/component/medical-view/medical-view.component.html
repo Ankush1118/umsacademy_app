@@ -1,0 +1,31 @@
+<div class="user-view-wrapper">
+  <div class="avatar-wrapper">
+    <!-- <app-avatar-round size="60" bubbleSize="20"></app-avatar-round> -->
+  </div>
+  <div class="info-wrapper">
+    <div class="name-time-row">
+      <div class="icon-label-view">
+        <p>{{medical?.clientName}}</p>
+      </div>
+    </div>
+    <div class="icon-label-view" >
+      <p>Date : {{medical.report_date | date:'dd MMM yyyy'}}</p>    
+    </div>
+    <div class="icon-label-view" >
+      <!-- <img src="assets/icon/noun_company.svg"> -->
+      <p>Health Issue : {{medical.health_issue}}</p>    
+    </div>
+    <!-- <div class="icon-label-view" *ngIf="client.mobileNo">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>{{client?.mobileNo}}</p>
+    </div>
+    <div class="icon-label-view" *ngIf="client.title">
+      <p>{{client?.title}}</p>
+    </div> -->
+  </div>
+</div>
+
+<!-- <p>Date : {{medical.report_date | date:'dd-MM-yyyy'}}</p>
+        <p>{{medical?.clientName}}</p>
+
+<p>Health Issue : {{medical.health_issue}}</p> -->

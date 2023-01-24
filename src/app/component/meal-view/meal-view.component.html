@@ -1,0 +1,27 @@
+<div class="user-view-wrapper">
+  <div class="avatar-wrapper">
+    <app-meal-photo size="60" bubbleSize="20" [imageUrl]="meal?.photoUrl"></app-meal-photo>
+    <!-- <app-avatar-round size="60" bubbleSize="20" iconUrl="{{meal?.photoUrl}}"></app-avatar-round> -->
+  </div>
+  <div class="info-wrapper">
+    <div class="name-time-row">
+      <div class="icon-label-view">
+        <!-- <p>{{connect?.displayName}}</p> -->
+        <p>{{meal?.clientName}}</p>
+      </div>
+      <!-- <p class="time">8 AM, 24th July 2020</p> -->
+    </div>
+    <div class="icon-label-view">
+        <!-- <img src="assets/icon/noun_company.svg"> -->
+        <p>Date : {{meal?.date | date:'dd MMM yyyy'}}</p>
+    </div>
+    <div class="icon-label-view">
+      <p>Meal Type : {{meal?.mealType | titlecase}}</p>
+  </div>
+
+    <!-- <div class="action-buttons pull-right">
+      <ion-button  size="small" color="primary" (click)="editMealModel(meal)"><ion-icon src="assets/icon/icon-pencil-line.svg"></ion-icon></ion-button>
+      <ion-button size="small" color="danger"  (click)="delete(meal.mealId)"><ion-icon name="trash-outline"></ion-icon></ion-button> 
+    </div> -->
+  </div>
+</div>

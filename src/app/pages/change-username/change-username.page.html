@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="close()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="username-wrapper center-column">
+    <ion-icon class="icon-circle" name="person-outline"></ion-icon>
+    <h1>Choose an Username</h1>
+    <input class="input-outline" placeholder="Enter here" [(ngModel)]="username">
+    <p>This username will be used in your unique Poptagg url</p>
+    <h2>https://poptagg.me/{{username.length > 0 ? username : 'your-username'}}</h2>
+  </div>
+
+
+</ion-content>
+<ion-footer>
+  <ion-button expand="block" class="button-submit" (click)="setUsername()">Save</ion-button>
+</ion-footer>

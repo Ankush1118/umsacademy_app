@@ -1,0 +1,19 @@
+@import "src/theme/mixins";
+.item-native {
+  padding-left: 0 !important;
+}
+
+ion-segment{
+  width: 70%;
+  margin: 10px auto;
+}
+ion-item {
+  --inner-padding-start: 0px;
+  --inner-padding-end: 0px;
+  --padding-start: 0px;
+  --padding-end: 0px;
+  width: 100%;
+  app-user-view{
+    width: 100%;
+  }
+}

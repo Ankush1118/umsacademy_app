@@ -1,0 +1,19 @@
+<ion-content cont>
+  <div class="main-wrapper" style="background-color:#95CD41;">
+    <div class="logo-image">
+      <img src="../assets/icon/icon4.png">
+    </div>
+
+    <!-- <h4 class="title">Welcome</h4> -->
+    <p class="sub-title">Universal Membership System</p>
+
+    <div class="bottom-button-wrapper">
+      <div *ngIf="isShield" class="shield"></div>
+      <button class="signin-button" (click)="openLogin()">Login</button>
+      <!-- <button class="signup-button" (click)="googleSignIn()"><img src="assets/google-icon.svg"> Continue with Google</button> -->
+      <p>Privacy Policy</p>
+    </div>
+  </div>
+
+
+</ion-content>

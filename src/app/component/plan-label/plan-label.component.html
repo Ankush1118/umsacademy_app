@@ -1,0 +1,12 @@
+<div class="icon-label-view" [class.checked]="plan?.isChecked">
+  <!-- <button *ngIf="isEditMode" (click)="editClicked()" class="edit-button">
+    <ion-icon src="assets/icon/icon-pencil-line.svg"></ion-icon>
+  </button> -->
+  <div class="icon">
+    <ion-icon class="check-icon" name="checkmark-circle" *ngIf="plan?.isChecked"></ion-icon>
+    <p class="price">Rs. {{plan?.perMemberPrice}} / Member</p>
+    <p class="validity"> For {{plan?.validity}} Days</p>
+    <p class="label">{{plan?.planName}}</p>
+  </div>
+  
+</div>

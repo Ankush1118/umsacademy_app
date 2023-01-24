@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar class="transparent-background">
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <div class="round-modal-wrapper">
+    <div class="login-wrapper">
+
+      <div class="header-wrapper">
+        <button></button>
+        <img >
+        <button (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </div>
+
+      <div class="social-section-wrapper">
+        <div class="expire-section-wrapper" *ngIf="clientPlan">
+          <p>Your {{plan.planName}} Plan is Expired on {{subscriptions.expiryDate | date}} </p>
+        </div>
+       <div class="grid">
+        <app-plan-label *ngFor="let plan of plans" [plan]="plan" (click)="checked(plan)"></app-plan-label>
+      </div>
+    </div>
+      <ion-button class="submit-button" (click)="applyPlan()">
+        Apply                    
+      </ion-button>
+    </div>
+  </div>  
+
+</ion-content>
+

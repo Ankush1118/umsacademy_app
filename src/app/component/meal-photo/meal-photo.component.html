@@ -1,0 +1,12 @@
+<div class="avatar-wrapper" [style.width]="size + 'px'" [style.height]="size + 'px'" >
+  <!-- <div class="logo" [style.backgroundImage]="'url(' + baseImageUrl + imageUrl + ')'">
+    <div class="lock" *ngIf="lock">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+    </div>
+  </div> -->
+  <ion-img-viewer class="logo" [src]="baseImageUrl + imageUrl"></ion-img-viewer>
+  <div *ngIf="isEditMode" class="bubble" [class.filled]="bubbleFilled" (click)="onBubbleClicked()" [style.width]="bubbleSize + 'px'" [style.height]="bubbleSize + 'px'"  [style.top]="getBubbleTop() + 'px'"  [style.left]="getBubbleLeft() + 'px'">
+    <ion-icon [src]="iconUrl" ></ion-icon>
+  </div>
+
+</div>

@@ -1,0 +1,28 @@
+<ion-header>
+</ion-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <app-title-line-action title="Wallet Transaction"></app-title-line-action>
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Passbook</ion-card-subtitle>
+    </ion-card-header>
+  
+    
+      <app-wallet-transaction-view *ngFor="let walletTransaction of walletTransactions" [walletTransaction]="walletTransaction" (refresh)="refresh()">
+
+      </app-wallet-transaction-view>
+  </ion-card>
+  
+
+</ion-content>
+
+

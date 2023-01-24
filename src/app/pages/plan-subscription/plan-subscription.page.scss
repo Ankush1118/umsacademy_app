@@ -1,0 +1,98 @@
+@import "src/theme/mixins";
+
+.header-wrapper{
+  width: 100%;
+  @include flex-center();
+  flex-direction: column;
+  img{
+    width: 140px;
+    margin: 10px;
+  }
+  ion-icon{
+    padding: 20px;
+    @include circlfy(60px);
+    background: var(--ion-color-light);
+    color: var(--ion-color-primary);
+  }
+  h1{
+
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+
+.form-wrapper {
+  @include safe-frame();
+  padding: 15px;
+  input {
+    width: 100%;
+    background: transparent;
+    @include roundify(12px);
+    padding: 12px;
+    margin: 8px auto;
+    border: 1px solid var(--shade-one);
+    background: var(--ion-color-light);
+  }
+
+  button{
+    width: 100%;
+    @include roundify(12px);
+    background: var(--ion-color-primary);
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 20px;
+    @include shadow-light();
+  }
+
+  ion-datetime{
+    width: 100%;
+    background: transparent;
+    @include roundify(12px);
+    padding: 12px;
+    margin: 8px auto;
+    border: 1px solid var(--shade-one);
+    background: var(--ion-color-light);
+  }
+
+  .text-danger{ color: red;}
+}
+
+.status-wrapper {
+  width: 100%;
+  height: 42px;
+  border-radius: 9px;
+  margin: 10px auto;
+  background: var(--ion-color-light);
+  box-shadow: 0 3px 6px #00000029;
+  display: flex;
+  float: right;
+  justify-content: stretch;
+  align-items: center;
+  overflow: hidden;
+  ion-select{
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 10px 12px;
+    font-size: 16px;
+    outline: none !important;
+    color: var(--shade-three);
+  }
+  button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    height: 100%;
+    background: rgba(245, 245, 245, 0.11);
+    width: 44px;
+    margin: 0;
+    color: var(--shade-three);
+    padding: 0;
+    ion-icon{
+      font-size: 20px;
+    }
+  }
+}

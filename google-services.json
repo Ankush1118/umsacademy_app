@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "207274741586",
+    "project_id": "institute-7d52f",
+    "storage_bucket": "institute-7d52f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207274741586:android:a33208227a7a499a9bf48b",
+        "android_client_info": {
+          "package_name": "com.netbugs.instituteapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207274741586-1ebs1jaerokh2thsfp58if0tocopkko1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPpih8KbOr_W-G8rqUXHIPhN76kCzoa1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207274741586-1ebs1jaerokh2thsfp58if0tocopkko1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

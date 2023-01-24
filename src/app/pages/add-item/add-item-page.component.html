@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{sectionId ? 'Add Link' : 'Add Section'}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div class="section-list-wrapper" *ngIf="sectionId == null">
+    <div class="section" *ngFor="let section of sections" (click)="addSection(section.sectionName)">
+      <p>{{section.sectionName}}</p>
+      <ion-icon name="arrow-forward"></ion-icon>
+    </div>
+
+    <div *ngIf="sections?.length > 0">
+      <div class="divider"></div>
+      <p class="custom-section-label">Create Custom Section</p>
+      <div class="section custom">
+        <input [(ngModel)]="customSectionName" placeholder="Enter name here">
+        <button (click)="addSection(customSectionName)">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div *ngIf="sectionId">
+
+    <app-search-bar [(value)]="searchInput"></app-search-bar>
+
+<!--    <div class="section-scroll-wrapper">-->
+<!--      <button *ngFor="let section of sections" (click)="setSectionFilter(section)">{{section.sectionName}}</button>-->
+<!--    </div>-->
+
+    <div class="social-section-wrapper" [hidden]="isSectionHidden(section)">
+<!--      <app-title-action-header [title]="section.sectionName" [centerTitle]="true"></app-title-action-header>-->
+      <div class="grid">
+        <app-icon-label *ngFor="let icon of allIcons" [isChecked]="icon.isUpdated" [hidden]="checkSearch(icon)" (click)="onIconClicked(icon)"
+                        image="{{'assets/item-icons/'+icon.iconImageUrl}}"
+                        label="{{icon.iconName}}"></app-icon-label>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>
+

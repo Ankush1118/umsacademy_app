@@ -1,0 +1,103 @@
+@import "src/theme/mixins";
+
+ion-content {
+  --background: transparent;
+  backdrop-filter: blur(5px);
+}
+
+.row-action-top {
+  width: 100%;
+  @include flex-center();
+  justify-content: flex-end;
+
+  button {
+    @include flex-center();
+    background: transparent;
+    color: var(--shade-three);
+
+    ion-icon {
+      font-size: 26px;
+    }
+  }
+}
+
+.card-wrapper {
+  margin-top: 30px;
+  @include cardify();
+  @include flex-center();
+  flex-direction: column;
+}
+
+.logo-wrapper {
+  @include flex-center();
+  @include squarify(70px);
+  @include roundify(15px);
+  @include shadow-light();
+  background: var(--ion-color-light);
+  margin-top: -30px;
+}
+
+.edit-title-wrapper {
+  width: 100px;
+  @include flex-center();
+  margin: 15px 0;
+  @include roundify(10px);
+  p {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+}
+
+.search-wrapper {
+  width: 100%;
+
+  input {
+    width: 100%;
+    @include shadow-light();
+    @include roundify(20px);
+    padding: 12px 20px;
+    border: 1px solid var(--shade-one);
+    outline: none;
+    background: transparent;
+    font-weight: 500;
+    box-sizing: border-box;
+  }
+
+  p {
+    text-align: center;
+    font-weight: normal;
+    color: var(--shade-two);
+    font-size: 12px;
+  }
+}
+
+.action-wrapper {
+
+  margin: 15px 0;
+
+  button {
+    background: transparent;
+    color: var(--shade-three);
+    padding: 15px 20px;
+    font-size: 16px;
+    @include shadow-light();
+    @include roundify(12px);
+    width: 100px;
+    margin: 5px 10px;
+  }
+
+  .save {
+    background: var(--ion-color-primary);
+    @include shadow-light();
+    color: white;
+  }
+}
+
+@include ion-match-segment();
+ion-segment {
+  margin: 5px auto;
+}

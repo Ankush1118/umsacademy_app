@@ -1,0 +1,137 @@
+<!--<div *ngIf="userProfile.photoUrl=='' ||userProfile.photoUrl==null" class="user-image-wrapper"-->
+<!--     [style.backgroundImage]="'url(' + 'https://media-exp1.licdn.com/dms/image/C4D03AQEsoV1rEWAmMw/profile-displayphoto-shrink_800_800/0/1611559394219?e=1633564800&v=beta&t=-kOyYx4JMDK1iyPui4DO4QE1PjYnlXmj22yyQol5xlE' + ')'"></div>-->
+<!--<div *ngIf="userProfile.photoUrl!=='' && userProfile.photoUrl!==null" class="user-image-wrapper"-->
+<!--     [style.backgroundImage]="'url(' +photoPath+userProfile.photoUrl+ ')'"></div>-->
+
+<!--https://media-exp1.licdn.com/dms/image/C4D03AQEsoV1rEWAmMw/profile-displayphoto-shrink_800_800/0/1611559394219?e=1633564800&v=beta&t=-kOyYx4JMDK1iyPui4DO4QE1PjYnlXmj22yyQol5xlE-->
+<!-- <div class="expire-section-wrapper" *ngIf="planValid">
+  <p>Your Plan expired on {{endDate | date}} <br><a (click)="openBranchPlan()">Click Here For Renew</a></p>
+</div> -->
+<div class="expire-section-wrapper" *ngIf="noPlan">
+  <a (click)="openBranchPlan()">Click Here For New Subscription</a>
+</div>
+
+<div class="avatar-edit-wrapper">
+
+  <!-- <div class="badge-container">
+    <div class="ribbon-wrapper">
+      <img src="assets/top-red.svg"/>
+      <p>PRO</p>
+    </div>
+
+    <div class="save-button-wrap">
+      <button>
+        <img src="assets/top-white.svg">
+      </button>
+      <p>Save</p>
+    </div>
+  </div> -->
+
+  <div *ngIf="userProfile.photoUrl=='' ||userProfile.photoUrl==null" class="user-image-wrapper"></div>
+
+  <!-- <button *ngIf="isEditMode" class="bubble-button edit-image-button" (click)="selectPhoto()">
+    <ion-icon src="assets/icon/icon-pencil-line.svg"></ion-icon>
+  </button> -->
+  <input id="fileInput" type="file">
+
+</div>
+
+<div class="user-info-wrapper" *ngIf="user">
+
+  <div class="logo-edit-wrapper">
+    <p class="profile-mode">{{user.userType}}</p>
+    <!-- <app-avatar-round size="100" size="100" 
+    imageUrl="{{logo}}"></app-avatar-round> -->
+    <!-- [isEditMode]="isEditMode"
+    (onBubbleClick)="photoUpdate('uploadLogo', 'logo')" -->
+  </div>
+
+
+  <!--USER NAME DESIGNATION ORGANISATION-->
+  <div class="user-info">
+    <div class="sub-header">
+      <h1 class="user-name">{{user?.displayName}}</h1>
+      <!-- <button *ngIf="isEditMode" (click)="fun.navigate('edit-profile')" class="edit-button bubble-button">
+        <ion-icon src="assets/icon/icon-pencil-line.svg"></ion-icon>
+      </button> -->
+    </div>
+    <div class="icon-text-label">
+      <ion-icon name='business-outline'></ion-icon>
+      <p>{{user?.location?.length > 0 ? user.location : 'Location'}}</p>
+    </div>
+    
+  </div> 
+
+
+  <!--      ABOUT-->
+  <!-- <div class="about-wrapper">
+    <div class="sub-header">
+      <h1 class="title">About</h1>
+    </div>
+    <p>{{user.aboutUs ? user.aboutUs : 'Write Your Bio'}}</p>
+  </div>
+
+</div>
+
+<div *ngIf="!sections || sections == []" class="center-row">
+  <ion-buttons>Get Started</ion-buttons>
+</div> -->
+
+<!--
+    <div class="center-row book-appnt-wrap">
+      <ion-button><ion-icon name="calendar-outline"></ion-icon> &nbsp;Book Appointment</ion-button>
+      <ion-button><ion-icon name="person-add-outline"></ion-icon> &nbsp;Connect</ion-button>
+    </div> -->
+
+
+<div class="social-section-wrapper" *ngFor="let section of sections" [hidden]="section?.sectionName.length < 1 || section.icons.length==0">
+  <app-title-action-header [title]="section.sectionName" [sectionId]="section?.sectionId" [isEditMode]="isEditMode"
+                           (refresh)="refresh()"></app-title-action-header>
+  <div class="grid">
+
+
+
+    <app-icon-label *ngFor="let icon of section.icons"
+                    image="{{'assets/item-icons/' + icon.iconImageUrl}}"
+                    label="{{icon.iconName}}" (click)="menuNavigate(icon)"></app-icon-label>
+     <!--<app-icon-label *ngIf="isEditMode || section?.icons?.length < 1" (click)="addItemClicked(section.sectionId)"
+
+                    icon="add"
+                    label="Add Link"></app-icon-label> -->
+  </div>
+</div>
+
+<!--    <div class="social-section-wrapper">-->
+<!--      <app-title-action-header title="Video"></app-title-action-header>-->
+<!--      <div class="video-wrapper">-->
+<!--        <iframe width="560" height="315" src="https://www.youtube.com/embed/eY9dXcjkVx8?controls=0" frameborder="0"-->
+<!--                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                allowfullscreen></iframe>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!-- <div class="getstart-wrapper" *ngIf="sections?.length < 1 && !isVisitMode && user.mode != 2">
+  <button (click)="addSection()">Get Started</button> -->
+</div>
+
+<!-- <div class="add-section-wrapper" (click)="addSection()" *ngIf="sections?.length > 0 && !isVisitMode">
+  <button>
+    <ion-icon name="add"></ion-icon>
+  </button>
+  <p>Create new section</p>
+</div> -->
+
+
+<!-- <div class="connect-wrapper">
+  <button (click)="openBranchPlan()">Upgrade Plan</button>
+</div> -->
+
+
+<div class="lock-shield" *ngIf="user.mode == 2">
+
+  <ion-icon name="lock-closed-outline" class="icon-circle"></ion-icon>
+  <h1>Profile Locked</h1>
+  <ion-button *ngIf="isVisitMode" color="primary" (click)="connect()">Send Connect</ion-button>
+
+</div>
+<app-edit-photo #editPhoto></app-edit-photo>

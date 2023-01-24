@@ -1,0 +1,41 @@
+@import "src/theme/mixins";
+
+.transparent-background {
+  --background: var(--ion-color-light);
+  //backdrop-filter: blur(5px);
+}
+
+.drawer-button {
+  color: black;
+  font-size: 15px;
+  padding: 0;
+  @include flex-center();
+  @include circlfy(30px);
+  background: white;
+  backdrop-filter: blur(10px);
+  margin-right: 10px;
+}
+
+.save-button {
+  @include flex-center();
+  padding: 5px 10px;
+  margin-right: 10px;
+  @include roundify(20px);
+  background: var(--ion-color-success);
+  color: white;
+  font-size: 16px;
+
+  ion-icon {
+    font-size: 25px;
+  }
+}
+
+.wallet-button {
+  padding: 0px;
+  color: black;
+  font-size: 16px;
+
+  ion-icon {
+    font-size: 35px;
+  }
+}

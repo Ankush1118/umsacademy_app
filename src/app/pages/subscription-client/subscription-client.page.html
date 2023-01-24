@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <app-title-line-action title="{{clientSubscription.clientName}}"></app-title-line-action>
+
+  </ion-toolbar>
+  <!-- <app-subscription-filter-bar  [(value)]="searchInput"></app-subscription-filter-bar> -->
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+      <app-subscription-client-view *ngFor="let subscription of clients" [subscription]="subscription"  (refresh)="refresh()"></app-subscription-client-view>
+     
+  </ion-list>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addClientModel()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+
+</ion-content>

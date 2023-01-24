@@ -1,0 +1,25 @@
+@import "src/theme/mixins";
+
+.footer-wrapper{
+  width: 100%;
+  padding: 20px 0;
+}
+
+.company-label{
+  text-transform: uppercase;
+  margin: 20px 5px 5px;
+  font-weight: normal;
+  text-align: center;
+  font-size: 12px;
+}
+
+.terms-label{
+  @include flex-center();
+  margin: 5px 0 20px;
+  font-weight: normal;
+  font-size: 12px;
+  a{
+    font-weight: normal;
+    margin: 5px;
+  }
+}

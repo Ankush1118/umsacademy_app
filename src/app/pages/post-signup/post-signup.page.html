@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="username-wrapper center-column">
+    <ion-icon class="icon-circle" name="person-outline"></ion-icon>
+    <h1>Update Basic Details</h1>
+  </div>
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <p class="label">First Name</p>
+      <input [(ngModel)]="user.firstName" placeholder="First Name">
+    </div>
+    <div class="form-item">
+      <p class="label">Last Name</p>
+      <input [(ngModel)]="user.lastName" placeholder="Last Name">
+    </div>
+    <div class="form-item">
+      <p class="label">Select User Type</p>
+      <select [(ngModel)]="user.userTypeId">
+        <option value="3" selected="">Teacher / Staff</option>
+        <option value="4">Parent</option>
+        <option value="5">Student</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <p class="label">Select Institute</p>
+      <select [(ngModel)]="user.instituteId" (change)="setInstituteDb($event)">
+        <option *ngFor="let institute of institutes" value="{{institute.instituteId}}">{{institute.instituteName}}</option>
+      </select>
+    </div>
+
+  </div> -->
+
+  
+
+  <div class="username-wrapper center-column">
+    <h2>Choose Department</h2>
+    <ion-item>
+      <ion-label>Select Department</ion-label>
+      <ion-select [(ngModel)]="departmentId">
+        <ion-select-option value="3">I am teacher / Staff</ion-select-option>
+        <ion-select-option value="4">I am parent</ion-select-option>
+        <ion-select-option value="5">I am student</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+  </div>
+
+  <div class="username-wrapper center-column">
+    <h2>Choose Designation</h2>
+    <ion-item>
+      <ion-label>Select Designation</ion-label>
+      <ion-select [(ngModel)]="designationId">
+        <ion-select-option value="3">I am teacher / Staff</ion-select-option>
+        <ion-select-option value="4">I am parent</ion-select-option>
+        <ion-select-option value="5">I am student</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+  </div>
+
+
+</ion-content>
+<ion-footer>
+  <ion-button expand="block" class="button-submit" (click)="save()">Save</ion-button>
+</ion-footer>

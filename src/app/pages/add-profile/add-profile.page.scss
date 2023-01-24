@@ -1,0 +1,25 @@
+@import "src/theme/mixins";
+
+.form-wrapper{
+  width: 100%;
+  input,textarea{
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    @include roundify(18px);
+    @include shadow-light();
+    border: 1px solid var(--shade-one);
+    padding: 15px 20px;
+    font-weight: normal !important;
+  }
+
+}
+
+.save-button-wrap{
+  width: 100%;
+  @include flex-center();
+  padding: 40px 0;
+}
+
+
+

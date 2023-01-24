@@ -1,0 +1,125 @@
+@import "src/theme/mixins";
+
+ion-content{
+  --background: transparent;
+}
+
+.round-modal-wrapper{
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(20px);
+}
+.login-wrapper{
+  width: 100%;
+  height: 100%;
+  @include flex-center();
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.social-section-wrapper{
+  width: 100%;
+  margin-top: 20px;
+  .grid{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 0 15px;
+    .icon-label-view{
+      margin: 0;
+    }
+  }
+
+  app-plan-label{
+    display: inline-block;
+    width: 50%;
+    float: left;
+    text-align: left;
+  }
+
+
+}
+
+
+
+
+
+
+.term-label{
+text-align: center;
+  font-weight: normal;
+  color: var(--shade-two);
+  a{
+    color: var(--shade-two);
+  }
+}
+
+.footer-actions{
+  @include safe-frame();
+  @include flex-row-between();
+  padding-bottom: 30px;
+}
+
+.footer-wrapper{
+  width: 100%;
+}
+
+
+
+.submit-button{
+  margin-bottom: 10px;
+
+}
+.signup{
+  margin-top: 50px;
+  color: var(--ion-color-dark);
+  background: var(--ion-color-light);
+  @include shadow-light();
+}
+
+.header-wrapper{
+  .title{
+    color: black;
+  }
+  button{
+    ion-icon{
+      color: black;
+    }
+  }
+}
+
+.phoneCountry{
+  width: 100%;
+}
+
+.expire-section-wrapper {
+  background: var(--ion-color-light);
+  @include roundify(22px);
+  @include flex-center();
+  @include safe-frame();
+  margin: 10px auto;
+  padding: 5px 0;
+  flex-direction: column;
+
+  button {
+    background: var(--ion-background-color);
+    @include roundify(20px);
+    @include flex-center();
+    @include circlfy(50px);
+    color: var(--shade-three);
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+
+  p {
+    margin: 10px 0 0 0;
+    text-align: center;
+    a{
+      cursor: pointer;
+    }
+  }
+}

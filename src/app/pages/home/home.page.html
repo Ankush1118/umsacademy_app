@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar class="transparent-background">
+    <ion-buttons slot="end">
+      <button class="wallet-button" (click)="fun.navigate('wallet')">
+        <ion-icon name="wallet"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <div class="title-logo">
+        <!-- <img src="assets/icon/dnyanam_logo_horizontal.png"> -->
+        <h2>UMS APP</h2>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--<div *ngIf="userProfile.photoUrl=='' ||userProfile.photoUrl==null" class="user-image-wrapper"-->
+<!--     [style.backgroundImage]="'url(' + 'https://media-exp1.licdn.com/dms/image/C4D03AQEsoV1rEWAmMw/profile-displayphoto-shrink_800_800/0/1611559394219?e=1633564800&v=beta&t=-kOyYx4JMDK1iyPui4DO4QE1PjYnlXmj22yyQol5xlE' + ')'"></div>-->
+<!--<div *ngIf="userProfile.photoUrl!=='' && userProfile.photoUrl!==null" class="user-image-wrapper"-->
+<!--     [style.backgroundImage]="'url(' +photoPath+userProfile.photoUrl+ ')'"></div>-->
+
+<!--https://media-exp1.licdn.com/dms/image/C4D03AQEsoV1rEWAmMw/profile-displayphoto-shrink_800_800/0/1611559394219?e=1633564800&v=beta&t=-kOyYx4JMDK1iyPui4DO4QE1PjYnlXmj22yyQol5xlE-->
+<ion-content>
+  <app-user-profile-view #userProfileViewComponent *ngIf="user" [user]="user" [isEditMode]="isEditMode"></app-user-profile-view>
+</ion-content>
+
+

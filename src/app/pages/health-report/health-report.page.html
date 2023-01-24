@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <app-title-line-action title="Health Report"></app-title-line-action>
+  </ion-toolbar>
+  <app-health-filter-bar  [(value)]="searchInput" [(healthDate)]="updateDt" (loadClients)="getAllHealthStatus()"></app-health-filter-bar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    
+      <app-health-view *ngFor="let healthStatus of healthes" [healthStatus]="healthStatus" [hidden]="checkSearch(healthStatus)" (refresh)="refresh()"></app-health-view>
+     
+  </ion-list>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addClientModel()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+
+</ion-content>

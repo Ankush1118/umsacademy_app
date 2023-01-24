@@ -1,0 +1,28 @@
+<ion-header >
+  <ion-toolbar style="background-color: white;">
+    <ion-buttons slot="start" style="background-color: white;">
+      <ion-back-button></ion-back-button>
+      <h1 style="background-color: white; margin-left: 40px; padding-right: 75px;">Subscription Report</h1>
+
+    </ion-buttons>
+    <!-- <app-title-line-action title="Subscription Report"></app-title-line-action> -->
+    <hr>
+  </ion-toolbar>
+  <app-subscription-filter-bar  [(value)]="searchInput" [(purchaseDate)]="purchaseDate" (refresh)="refresh()"></app-subscription-filter-bar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    
+      <app-subscription-view *ngFor="let subscription of subscriptions" [subscription]="subscription" [hidden]="checkSearch(subscription)" (refresh)="refresh()"></app-subscription-view>
+     
+  </ion-list>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addClientModel()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+
+</ion-content>

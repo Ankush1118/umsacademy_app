@@ -1,0 +1,78 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <p class="label">Display Name <span style="color: red;">*</span></p>
+      <input text="name" required #name="ngModel" [(ngModel)]="user.displayName" placeholder="Display Name">
+      <span *ngIf="name.invalid && name.touched" style="color: red;"> Name is required</span>
+    </div>
+    <div class="form-item">
+      <p class="label">Email Id </p>
+      <input [(ngModel)]="user.email" placeholder="Email Id">
+    </div>
+    <div class="form-item">
+      <p class="label">Location <span style="color: red;">*</span></p>
+      <input text="location" required #location="ngModel" [(ngModel)]="user.location" placeholder="Location">
+      <span *ngIf="location.invalid && location.touched" style="color: red;"> Location is required</span>
+    </div>
+    <div class="form-item">
+      <p class="label">About</p>
+      <textarea [(ngModel)]="user.aboutUs"></textarea>
+    </div>
+    <button class="save-button" (click)="saveChanges()">Save Changes</button>
+  </div>
+
+
+</ion-content> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <div class="form-wrapper">
+        <input type="hidden" formControlName="userId">
+        <!-- <input type="hidden" formControlName="isDeleted"> -->
+        <label class="input-label">Display Name <span style="color: red;">*</span></label>
+        <input placeholder="Name" type="text" formControlName="displayName" required 
+         [ngClass]="{ 'is-invalid': submitted && fUser.displayName.invalid, 'is-valid': fUser.displayName.valid  }">
+        <div *ngIf="submitted && fUser.displayName.invalid" class="text-danger">
+          <div class="errorMsg" *ngIf="fUser.displayName.errors.pattern">Please Enter valid Display Name</div>
+          <div class="errorMsg" *ngIf="fUser.displayName.errors.required">Display Name is required</div>
+        </div>
+        <label class="input-label">Email Id </label>
+        <input placeholder="Email" type="email" formControlName="email" >
+        <div *ngIf="submitted && fUser.email.errors" class="text-danger">
+          <!-- <div class="errorMsg" *ngIf="fUser.email.errors.required">Enter a valid email</div> -->
+          <div class="errorMsg" *ngIf="fUser.email.errors.pattern">Please Enter a valid email</div>
+        </div>
+        <label class="input-label">Location</label>
+        <input placeholder="Location" type="text" formControlName="location">
+
+        <label class="label">About Us</label>
+        <textarea placeholder="About Us" type="text" formControlName="aboutUs"></textarea>
+
+
+        <button type="submit">Submit</button>
+    </div>
+  </form>
+
+</ion-content>

@@ -1,0 +1,26 @@
+<div class="filter-wrapper">
+  <div class="search-wrapper">
+    <input placeholder="Search" [(ngModel)]="value" (keyup)="inputChange()">
+    <button>
+      <ion-icon name="search"></ion-icon>
+    </button> 
+  </div>
+  <div class="select-wrapper">
+    <ion-select placeholder="Client" [(ngModel)]="clientId" okText="Okay" cancelText="Dismiss" (ionChange)="clientChange()">
+      <ion-select-option *ngFor="let client of clients" value="{{client.clientId}}">{{client.clientName}}</ion-select-option>
+    </ion-select>
+  </div>
+</div>
+<div class="filter-wrapper">
+  <div class="date-wrapper">
+    <ion-datetime placeholder="Date" [(ngModel)]="value" (keyup)="inputChange()"></ion-datetime>
+    <button>
+      <ion-icon name="calendar"></ion-icon>
+    </button> 
+  </div>
+  <div class="status-wrapper">
+    <ion-select placeholder="Client" [(ngModel)]="clientId" okText="Okay" cancelText="Dismiss" (ionChange)="clientChange()">
+      <ion-select-option *ngFor="let client of clients" value="{{client.classId}}">{{client.clientName}}</ion-select-option>
+    </ion-select>
+  </div>
+</div>

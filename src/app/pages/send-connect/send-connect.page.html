@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="header-wrapper">
+    <img src="assets/icon/Poptagg_Logo_Black.png">
+    <ion-icon name="people-outline"></ion-icon>
+    <h1>Send connect to <br> Manu Arya</h1>
+  </div>
+
+
+  <form [formGroup]="connectForm" (ngSubmit)="saveConnect()">
+  <div class="form-wrapper">
+    <input placeholder="Name" formControlName="displayName">
+    <input placeholder="Email" type="email" formControlName="email">
+    <input placeholder="Phone" type="tel" formControlName="mobileNo">
+    <button type="submit">Connect</button>
+  </div>
+  </form>
+
+</ion-content>

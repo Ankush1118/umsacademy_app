@@ -1,0 +1,25 @@
+<div class="user-view-wrapper">
+  <div class="avatar-wrapper">
+    <!-- <app-avatar-round size="60" bubbleSize="20" iconUrl=""></app-avatar-round> -->
+  </div>
+  <div class="info-wrapper">
+    <div class="name-time-row">
+      <div class="icon-label-view">
+        <p>{{healthStatus?.clientName}}</p>
+      </div>
+    </div>
+    <div class="icon-label-view">
+      <p>Date-{{healthStatus?.updateDt | date:'dd MMM yyyy'}}</p>
+  </div>
+    <div class="icon-label-view">
+        <p>Weight-{{healthStatus?.weight}}</p>
+    </div>
+    <div class="icon-label-view">
+      <p>Height-{{healthStatus?.height}}</p>
+    </div>
+    <!-- <div class="action-buttons pull-right">
+      <ion-button  size="small" color="primary" (click)="editHealthModel(healthStatus)"><ion-icon src="assets/icon/icon-pencil-line.svg"></ion-icon></ion-button>
+      <ion-button size="small" color="danger"  (click)="delete(healthStatus.healthstatusId)"><ion-icon name="trash-outline"></ion-icon></ion-button> 
+    </div> -->
+  </div>
+</div>

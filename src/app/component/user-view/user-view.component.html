@@ -1,0 +1,50 @@
+<div class="user-view-wrapper">
+  <div class="avatar-wrapper">
+    <app-avatar-round size="60" bubbleSize="20"></app-avatar-round>
+  </div>
+  <div class="info-wrapper">
+    <div class="name-time-row">
+      <div class="icon-label-view">
+        <p>{{client?.clientName}}</p>
+      </div>
+      <p class="time">Age-{{client?.age}}</p>
+      
+    </div>
+    <div class="icon-label-view" *ngIf="client.createdTime">
+      <p>Date:{{client?.createdTime}}</p>
+    </div>
+    <div class="icon-label-view" *ngIf="client.weight">
+      <!-- <img src="assets/icon/noun_company.svg"> -->
+      <p>Weight: {{client?.weight}} </p>
+    </div>
+    <div class="icon-label-view" *ngIf="client.height">
+      <!-- <img src="assets/icon/noun_Location.svg"> -->
+      <p>Height: {{client?.height}}</p>
+    </div>
+    <div class="icon-label-view" *ngIf="client.bmi">
+      <!-- <ion-icon name="mail-outline"></ion-icon> -->
+      <p>BMI: {{client?.bmi}}</p>
+    </div>
+    <div class="label-view-expiry" *ngIf="client.endDate">
+      <!-- <ion-icon name="mail-outline"></ion-icon> -->
+      <p>Expiry Date: {{client?.endDate}}</p>
+    </div>
+    <!-- <div class="icon-label-view" *ngIf="client.mobileNo">
+      <ion-icon name="call-outline"></ion-icon>
+      <p>{{client?.mobileNo}}</p>
+    </div>
+    <div class="icon-label-view" *ngIf="client.title">
+      <p>{{client?.title}}</p>
+    </div> -->
+    <div class="action-buttons pull-right">
+      <!-- <div *ngIf="compareTwoDates(client.createdTime,today)"> -->
+        <!-- <ion-button size="small" color="primary" *ngIf="compareTwoDates(client.createdTime, today)"  (click)="editClientModel(client)"><ion-icon src="assets/icon/icon-pencil-line.svg"></ion-icon></ion-button> -->
+        <ion-button size="small" color="primary"  (click)="editClientModel(client)"><ion-icon src="assets/icon/icon-pencil-line.svg"></ion-icon></ion-button>
+      <!-- </div> -->
+      <!-- <ion-button size="small" color="danger" (click)="delete(client.clientId)"><ion-icon name="trash-outline"></ion-icon></ion-button>  -->
+      <ion-button size="small" color="danger" (click)="isDelete(client)"><ion-icon name="trash-outline"></ion-icon></ion-button> 
+      <ion-button size="small" *ngIf="client.activeUser == 0" color="secondary" (click)="activate(client)">Activate</ion-button>
+      <ion-button size="small" *ngIf="client.activeUser == 1" color="danger" (click)="deactivate(client)">Deactive</ion-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,284 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+@import "theme/mixins";
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
+
+
+* {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+textarea, input {
+  -webkit-appearance: none;
+}
+
+button, input {
+  outline: none;
+
+}
+
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0 !important;
+}
+
+ion-title {
+  font-size: 20px;
+}
+
+.bubble-button {
+  @include circlfy(38px);
+  @include shadow-light();
+  background: var(--ion-color-light);
+  padding: 10px;
+
+  ion-icon {
+    font-size: 18px;
+    color: var(--shade-three) !important;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.center-row {
+  width: 100%;
+  @include flex-center();
+  flex-direction: row;
+}
+
+.center-column {
+  width: 100%;
+  @include flex-center();
+  flex-direction: column;
+}
+
+ion-back-button {
+  padding-left: 15px;
+  --color: var(--shade-three)
+}
+
+.input-wrapper {
+  width: 100%;
+  @include flex-row-between();
+  background: var(--ion-color-light);
+  @include roundify(25px);
+  @include shadow-light();
+  margin: 15px 0;
+  padding: 0 15px;
+  border: 1px solid var(--shade-one);
+
+  p {
+    font-size: 18px;
+    background: var(--shadow-one);
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px;
+    color: var(--shade-three);
+    outline: none;
+  }
+
+  ion-icon {
+    flex-shrink: 0;
+    font-size: 22px;
+  }
+}
+
+.modal-wrapper {
+  background: transparent !important;
+  //backdrop-filter: blur( 4px );
+}
+
+
+.social-login-wrapper {
+  @include safe-frame();
+  margin: 20px auto;
+  @include flex-center();
+
+  ion-button {
+    margin: 10px 0;
+    border-radius: 24px;
+    @include shadow-light();
+  }
+
+  .social-login-button {
+    margin: 10px;
+    @include circlfy(50px);
+    @include flex-center();
+    @include shadow-light();
+    background: white;
+    padding: 10px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.line-form-wrapper {
+  @include safe-frame();
+  margin: 20px auto;
+  padding: 20px;
+
+  .input-wrapper {
+    width: 100%;
+    margin: 10px auto;
+    box-shadow: none;
+    @include roundify(12px);
+    border: 1px solid var(--shade-one);
+    padding: 2px 10px;
+    background: white;
+    color: black;
+
+    input {
+      color: black;
+    }
+
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+
+  .forgot-password {
+    width: 100%;
+    text-align: right;
+    color: black;
+    font-weight: normal;
+    margin: 15px 0;
+  }
+
+  .submit-button {
+    margin: 0;
+    width: 100%;
+    background: var(--ion-color-primary);
+    color: white;
+    @include flex-center();
+    padding: 15px;
+    font-size: 18px;
+    @include roundify(10px)
+  }
+}
+
+
+.icon-circle {
+  padding: 20px;
+  @include circlfy(60px);
+  background: var(--ion-color-light);
+  color: var(--ion-color-primary);
+}
+
+.input-outline {
+  display: block;
+  @include safe-frame();
+  background: transparent;
+  @include roundify(12px);
+  padding: 10px;
+  margin: 8px auto;
+  border: 1px solid var(--shade-one);
+  background: var(--ion-color-light);
+}
+
+.title-logo {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 100%;
+  //border-bottom: 1px solid var(--shade-three);
+  @include flex-center();
+
+  img {
+    width: 110px;
+  }
+}
+
+.transparent-background {
+  --background: transparent;
+  //backdrop-filter: blur(5px);
+}
+
+.toastAfterHeader {
+  position: fixed;
+  bottom: 100px;
+}
+
+
+.round-modal-wrapper {
+  width: 100%;
+  height: 95%;
+  position: absolute;
+  bottom: 0;
+  overflow: scroll;
+  background: var(--ion-background-color);
+  border-radius: 25px 25px 0 0;
+  padding-bottom: 40px;
+  box-shadow: -10px 0 10px 0 rgba(0, 0, 0, 0.16);
+}
+
+.header-wrapper {
+  width: 100%;
+  @include flex-row-between();
+  padding: 10px 15px;
+
+  .title {
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--shade-three);
+  }
+
+  img {
+    width: 120px;
+  }
+
+  button {
+    width: 40px;
+    background: transparent;
+    padding: 0;
+    @include flex-center();
+
+    ion-icon {
+      color: var(--shade-three);
+      font-size: 30px;
+    }
+  }
+}
+
+//html, body {
+//  background: transparent !important;
+//}
+//ion-app.cameraView, ion-app.cameraView ion-content, ion-app.cameraView .nav-decor {
+//  background: transparent none !important;
+//}

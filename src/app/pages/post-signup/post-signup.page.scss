@@ -1,0 +1,71 @@
+@import "src/theme/mixins";
+
+ion-footer{
+  background: var(--ion-background-color);
+  padding: 10px;
+
+}
+.submit-button{
+
+}
+.username-wrapper{
+  h1{
+    font-weight: bold;
+  }
+  p{
+    @include safe-frame();
+    margin-top: 20px;
+    
+    text-align: center;
+    font-weight: normal;
+    font-size: 15px;
+    color: var(--shade-two);
+  }
+  h2{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--shade-two);
+  }
+
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.form-wrapper {
+  width: 100%;
+  padding: 20px;
+  border: none;
+
+  .form-item {
+    width: 100%;
+    margin-bottom: 15px;
+
+    .label {
+      padding: 0 5px;
+      margin: 5px;
+      font-weight: normal;
+    }
+
+    input,textarea,select {
+      width: 100%;
+      border: none;
+      padding: 10px;
+      @include roundify(10px);
+      font-weight: normal;
+    }
+
+
+  }
+
+}
+.save-button{
+  @include flex-center();
+  margin: 0 auto;
+  padding: 15px 25px;
+  font-size: 16px;
+  background: var(--ion-color-primary);
+  color: white;
+  @include roundify(15px);
+}
+

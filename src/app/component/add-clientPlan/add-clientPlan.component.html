@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="header-wrapper">
+    <h3>Add/Edit Plan</h3>
+  </div>
+
+
+  <form [formGroup]="clientPlanForm" (ngSubmit)="savePlan()">
+    <div class="form-wrapper">
+        <input type="hidden" formControlName="planId">
+        <input type="hidden" formControlName="isDeleted">
+        <label class="input-label">Plan Name <span style="color: red;">*</span></label>
+        <input placeholder="Name" type="text" formControlName="planName" required 
+         [ngClass]="{ 'is-invalid': submitted && fCPlan.planName.invalid, 'is-valid': fCPlan.planName.valid  }">
+        <div *ngIf="submitted && fCPlan.planName.invalid" class="text-danger">
+          <div class="errorMsg" *ngIf="fCPlan.planName.errors.pattern">Please Enter valid Plan Name</div>
+          <div class="errorMsg" *ngIf="fCPlan.planName.errors.required">Plan Name is required</div>
+        </div>
+        <label class="input-label">Validity (days) <span style="color: red;">*</span></label>
+        <input placeholder="Validity in Days" type="number" formControlName="validity" required (keypress)="keyPressNumbers($event)"
+         [ngClass]="{ 'is-invalid': submitted && fCPlan.validity.invalid, 'is-valid': fCPlan.validity.valid  }">
+        <div *ngIf="submitted && fCPlan.validity.invalid" class="text-danger">
+          <div class="errorMsg" *ngIf="fCPlan.validity.errors.required">Validity is required</div>
+        </div>
+        <label class="input-label">Price (Rs) <span style="color: red;">*</span></label>
+        <input placeholder="Price in Rs" type="number" formControlName="price" required (keypress)="keyPressNumbers($event)"
+         [ngClass]="{ 'is-invalid': submitted && fCPlan.price.invalid, 'is-valid': fCPlan.price.valid  }">
+        <div *ngIf="submitted && fCPlan.price.invalid" class="text-danger">
+          <div class="errorMsg" *ngIf="fCPlan.price.errors.required">Price is required</div>
+        </div>
+        <button type="submit">Submit</button>
+    </div>
+  </form>
+
+</ion-content>

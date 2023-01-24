@@ -1,0 +1,49 @@
+
+<ion-content>
+
+  <div class="content1">
+
+    <div class="top-red">
+      <ion-icon name="apps-outline"></ion-icon>
+    </div>
+      <br> <br>
+      <h6 style="text-align: center; font-weight: bold; font-size: 24px;">Portfolio</h6>
+      <p class="line-25"><img src="../../../assets/Line 25.svg"></p>
+<!--      <img src="../../../assets/blackpen.svg" class="bg-pen-pro-edit-profile">-->
+
+
+  </div>
+
+
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="github">
+    <p style="text-align:center; "> <ion-img src="../../../assets/Quick Contact/Github.png" ></ion-img></p>
+    <p style="text-transform: capitalize;text-align: center;font-size: 16px;">Github</p>
+    </ion-segment-button>
+    <ion-segment-button value="behance">
+      <p style="text-align:center; "> <ion-img src="../../../assets/Quick Contact/Behance.png" ></ion-img></p>
+      <p style="text-transform: capitalize;text-align: center;font-size: 16px;">Behance</p>
+      </ion-segment-button>
+      <ion-segment-button value="custom">
+        <p style="text-align:center; "> <ion-img src="../../../assets/Quick Contact/Github.png" ></ion-img></p>
+        <p style="text-transform: capitalize;text-align: center;font-size: 16px;">Custom</p>
+        </ion-segment-button>
+
+    </ion-segment>
+
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="heart">
+      <p style="text-align:center; "> <ion-img src="../../../assets/addicon.svg" ></ion-img></p>
+      <p style="text-transform: capitalize;text-align: center;font-size: 16px;">Add Profiles</p>
+      </ion-segment-button>
+
+      </ion-segment>
+
+  <br><br> <br><br>
+  <div class="save">
+    <ion-button color="primary">Save</ion-button>
+    </div>
+
+
+
+  </ion-content>

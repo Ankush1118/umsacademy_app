@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar class="transparent-background">
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div id="sign-in-button"></div>
+  <div class="round-modal-wrapper">
+    <div class="login-wrapper">
+
+      <div class="header-wrapper">
+        <button></button>
+        <img >
+        <button (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </div>
+
+      <div class="line-form-wrapper">
+        <div class="input-wrapper">
+          <ion-icon name="flag-outline"></ion-icon>
+          <ion-select class="phoneCountry" value="brown" okText="Okay" cancelText="Dismiss"
+                  (ionChange)="countryCodeChange($event)" [value]="CountryCode">
+                  <ion-select-option text-left *ngFor="let country of CountryJson" value={{country.dial_code}}>
+                    {{country.dial_code + ' ' + country.name}}</ion-select-option>
+                </ion-select>
+        </div>
+        <div class="input-wrapper">
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-input clearInput type="number" placeholder="Your Contact Number" [(ngModel)]="PhoneNo" (ionChange)="checkMobileNo($event.target.value)"
+                  class="input ion-padding-horizontal" clear-input="true"></ion-input>
+          
+        </div>
+        <span *ngIf="!loginRes.status" style="color: red; font-size: small;">{{loginRes.message}}</span>
+        <br>
+
+        <div class="input-wrapper" *ngIf="showOTPInput">
+          <ng-otp-input #ngOtpInput  (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+          <!-- <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input clearInput placeholder="Your Contact Number" [(ngModel)]="otp"
+                  class="input ion-padding-horizontal" clear-input="true"></ion-input> -->
+        </div>
+
+        <!-- <p class="forgot-password">Forgot Password?</p> -->
+        <ion-col size="12" style="margin-top: 20px;">
+          <p class="otp-verification-page-otp-verification-link" *ngIf="showOTPInput" ><a class="disable" (click)="signinWithPhoneNumber($event)"  >Resend?</a><countdown class="countdown-style" [config]="{ leftTime: 60, format: 'm:s' }"></countdown></p>
+        </ion-col>
+        <button class="submit-button" [disabled]="!loginRes.status" *ngIf="!showOTPInput" (click)="signinWithPhoneNumber($event)">
+          Login
+        </button>
+        <button class="submit-button" *ngIf="showOTPInput" (click)="fireOtpVerification()">
+          Verify OTP
+        </button>
+      </div>
+
+
+    </div>
+  </div>  
+  
+
+</ion-content>
+

@@ -1,0 +1,78 @@
+@import "src/theme/mixins";
+
+ion-content{
+  --background: transparent;
+}
+
+.round-modal-wrapper{
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(20px);
+}
+.login-wrapper{
+  width: 100%;
+  height: 100%;
+  @include flex-center();
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+
+
+
+
+
+.term-label{
+text-align: center;
+  font-weight: normal;
+  color: var(--shade-two);
+  a{
+    color: var(--shade-two);
+  }
+}
+
+.footer-actions{
+  @include safe-frame();
+  @include flex-row-between();
+  padding-bottom: 30px;
+}
+
+.footer-wrapper{
+  width: 100%;
+}
+
+
+
+.submit-button{
+  margin-bottom: 10px;
+
+}
+.signup{
+  margin-top: 50px;
+  color: var(--ion-color-dark);
+  background: var(--ion-color-light);
+  @include shadow-light();
+}
+
+.header-wrapper{
+  .title{
+    color: black;
+  }
+  button{
+    ion-icon{
+      color: black;
+    }
+  }
+}
+
+.phoneCountry{
+  width: 100%;
+}
+
+.otp-verification-page-otp-verification-link{
+  text-align: center;
+  font-family: "Rambla-Regular";
+  font-size: 18px;
+  color: var(--ion-primary-main-text-color);
+  margin: 0;
+}

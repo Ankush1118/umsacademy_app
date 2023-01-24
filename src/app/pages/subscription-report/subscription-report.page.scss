@@ -1,0 +1,10 @@
+h1{
+    margin: 0;
+    font-size: 22px;
+    color: var(--shade-three);
+    font-weight: bold;
+    max-width: 300px;
+    overflow: hidden;
+    white-space: nowrap !important;
+    text-overflow: ellipsis;
+  }

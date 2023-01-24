@@ -1,0 +1,28 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="qr-wrapper">
+    <h1>Scan</h1>
+    <div class="qr" #qrcode>
+      <ngx-qrcode cssClass = "ngx-qr" value="{{preUrl + user?.username}}" width="190"></ngx-qrcode>
+    </div>
+
+
+    <p class="url">https://poptagg.me/{{user?.username}}</p>
+    <p class="instruction">Go to your mobile camera and scan for the barcode
+      or open google lense.</p>
+  </div>
+
+  <div class="action-sheet">
+    <button (click)="sendShare(qrcode,'Poptagg QRCODE', 'https://poptagg.com')"><ion-icon name="share-social-outline"></ion-icon>Share Link</button>
+    <button><ion-icon name="mail-outline"></ion-icon>Share as Email</button>
+    <button><ion-icon name="chatbubbles-outline"></ion-icon>Share as Text</button>
+    <button><ion-icon name="qr-code-outline"></ion-icon>Download QR</button>
+  </div>
+
+
+
+
+</ion-content>

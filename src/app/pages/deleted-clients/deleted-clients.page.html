@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <app-title-line-action title="Deleted Clients"></app-title-line-action>
+  </ion-toolbar>
+  <app-client-search-bar  [(value)]="searchInput"></app-client-search-bar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    
+      <app-deleted-client-view *ngFor="let client of clients" [hidden]="checkSearch(client)" [client]="client" (refresh)="refresh()"></app-deleted-client-view>
+     
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addClientModel()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>

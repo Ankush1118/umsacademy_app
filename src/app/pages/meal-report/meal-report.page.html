@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <app-title-line-action title="Meal Report"></app-title-line-action>
+  </ion-toolbar>
+  <app-meal-filter-bar  [(value)]="searchInput" [(mealDate)]="mealDate" (loadMeals)="getAllMeals()"></app-meal-filter-bar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list >
+    
+      <app-meal-view *ngFor="let meal of meals" [meal]="meal" [hidden]="checkSearch(meal)" (refresh)="refresh()"></app-meal-view>
+     
+  </ion-list>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addClientModel()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+
+</ion-content>

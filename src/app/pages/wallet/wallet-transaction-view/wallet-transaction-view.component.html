@@ -1,0 +1,35 @@
+<div class="user-view-wrapper">
+  <div class="avatar-wrapper">
+    <!-- <app-avatar-round size="60" bubbleSize="20" iconUrl=""></app-avatar-round> -->
+  </div>
+  <div class="info-wrapper">
+    <div class="name-time-row">
+      <div class="icon-label-view">
+        <p *ngIf="walletTransaction?.transactionType=='CREDIT'" style="color: green;">+ ₹ {{walletTransaction?.amount}}</p>
+        <p *ngIf="walletTransaction?.transactionType=='DEBIT'" style="color: red;">- ₹ {{walletTransaction?.amount}}</p>
+      </div>
+      <ion-badge color="danger" class="pull-right" *ngIf="walletTransaction.status == 0">Declined</ion-badge>
+      <ion-badge color="success" class="pull-right" *ngIf="walletTransaction.status == 1">Accepted</ion-badge>
+      <ion-badge color="warning" class="pull-right" *ngIf="walletTransaction.status == 2">Pending</ion-badge>
+      
+    </div>
+    <!-- <div class="icon-label-view">
+      <p>{{walletTransaction?.description}}</p>
+    </div>
+    <div class="icon-label-view" *ngIf="walletTransaction?.balance">
+        <p>Balance : {{walletTransaction?.balance}}</p>
+    </div> -->
+    <div class="icon-label-view" *ngIf="walletTransaction?.transactionAddedDatetime">
+      <p>Date: {{walletTransaction?.transactionAddedDatetime | date:'dd-MM-yyyy hh:mm:ss'}}</p>
+  </div>
+  
+  <div class="icon-label-view" *ngIf="walletTransaction?.paymentMode">
+      <p>Payment Mode : {{walletTransaction?.paymentMode}}</p>
+  </div>
+  <div class="icon-label-view" *ngIf="walletTransaction?.transactionNo">
+    <p>Transaction No : {{walletTransaction?.transactionNo}}</p>
+  </div>
+
+  </div>
+</div>
+

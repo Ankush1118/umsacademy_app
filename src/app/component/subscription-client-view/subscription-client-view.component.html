@@ -1,0 +1,47 @@
+<div class="user-view-wrapper">
+  <div class="avatar-wrapper">
+    <!-- <app-avatar-round size="60" bubbleSize="20" iconUrl=""></app-avatar-round> -->
+  </div>
+  <div class="info-wrapper">
+    <div class="name-time-row">
+      <div class="icon-label-view">
+        <p>{{subscription?.planName}}</p>
+      </div>
+      <ion-badge color="danger" class="pull-right" *ngIf="subscription.status == 0">Declined</ion-badge>
+      <ion-badge color="success" class="pull-right" *ngIf="subscription.status == 1">Accepted</ion-badge>
+      
+    </div>
+    <div class="icon-label-view" *ngIf="subscription?.startDate">
+        <p>StartDate : {{subscription?.startDate | date:'dd MMM yyyy'}}</p>
+    </div>
+    <div class="icon-label-view" *ngIf="subscription?.endDate">
+      <p>EndDate : {{subscription?.endDate | date:'dd MMM yyyy'}}</p>
+  </div>
+    <div class="icon-label-view">
+      <p>Validity : {{subscription?.validity}} days</p>
+  </div>
+    <div class="icon-label-view">
+      <p>₹ {{subscription?.price}}</p>
+  </div>
+  <div class="icon-label-view" *ngIf="subscription?.payment_mode">
+      <p>Payment Mode : {{subscription?.payment_mode}}</p>
+  </div>
+  <div class="icon-label-view" *ngIf="subscription?.transactionNo">
+    <p>Transaction No : {{subscription?.transactionNo}}</p>
+  </div>
+
+  
+  <ion-badge *ngIf="checkDateBetweenTwoDates(subscription?.startDate,subscription?.endDate)" color="warning" class="pull-right">Active Subscription</ion-badge>
+  
+
+  <div class="action-buttons pull-right">
+    <!-- <ion-button size="small" *ngIf="subscription.status == 2"  color="danger" (click)="inActive(subscription)"><ion-icon name="close-outline"></ion-icon></ion-button> 
+    <ion-button size="small" *ngIf="subscription.status == 2"  color="success" (click)="active(subscription)"><ion-icon name="checkmark-outline"></ion-icon></ion-button> -->
+    <ion-button size="small" *ngIf="subscription.status == 2" color="danger" (click)="inActive(subscription)"><ion-icon name="close-outline"></ion-icon></ion-button> 
+    <ion-button size="small" *ngIf="subscription.status == 2" color="success" (click)="active(subscription)"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
+    <!-- <ion-badge color="danger" *ngIf="subscription.status == 0">Declined</ion-badge>
+    <ion-badge color="success" *ngIf="subscription.status == 1">Accepted</ion-badge>  -->
+  </div>
+  </div>
+</div>
+

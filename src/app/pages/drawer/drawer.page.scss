@@ -1,0 +1,46 @@
+@import "src/theme/mixins";
+
+.avatar-wrapper {
+  margin-top: constant(safe-area-inset-top);
+  margin-top: env(safe-area-inset-top);
+  padding-top: 15px;
+  width: 100%;
+  @include flex-center();
+}
+
+.options-row {
+  @include safe-frame();
+  @include flex-row-between();
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 10px 20px;
+
+  app-circle-icon-button {
+    flex: 1;
+  }
+}
+
+@include ion-match-segment();
+ion-segment {
+  width: 78%;
+}
+
+.company-label {
+  text-transform: uppercase;
+  margin: 20px 5px 5px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--shade-two);
+}
+
+.terms-label {
+  @include flex-center();
+  margin: 5px 0 20px;
+  font-weight: normal;
+
+  a {
+    font-weight: normal;
+    margin: 5px;
+  }
+}
+

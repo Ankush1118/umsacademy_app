@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+      <ion-button color="dark" (click)="closeModal()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="header-wrapper">
+    <h3>Add/Edit Client</h3>
+  </div>
+
+
+  <form [formGroup]="clientForm" (ngSubmit)="saveClient()">
+    <div class="form-wrapper">
+        <input type="hidden" formControlName="clientId">
+        <input type="hidden" formControlName="activeUser">
+        <input type="hidden" formControlName="isDeleted">
+        <input type="hidden" formControlName="createdTime">
+        <label class="input-label">Client Name <span style="color: red;">*</span></label>
+        <input placeholder="Name" type="text" formControlName="clientName" required
+         [ngClass]="{ 'is-invalid': submitted && fClient.clientName.invalid, 'is-valid': fClient.clientName.valid  }">
+        <div *ngIf="submitted && fClient.clientName.invalid" class="text-danger">
+          <div class="errorMsg" *ngIf="fClient.clientName.errors.pattern">Please Enter valid Name</div>
+          <div class="errorMsg" *ngIf="fClient.clientName.errors.required">Client Name is required</div>
+        </div>
+
+        <label class="input-label">Email Id </label>
+        <input placeholder="Email" type="email" formControlName="emailId" 
+         [ngClass]="{ 'is-invalid': submitted && fClient.emailId.invalid, 'is-valid': fClient.emailId.valid  }">
+        <div *ngIf="submitted && fClient.emailId.errors" class="text-danger">
+          <!-- <div class="errorMsg" *ngIf="fClient.emailId.errors.required">Enter a valid email</div> -->
+          <div class="errorMsg" *ngIf="fClient.emailId.errors.pattern">Please Enter a valid email</div>
+        </div>
+       <label class="input-label">Mobile Number <span style="color: red;">*</span></label>
+        <input placeholder="Phone" type="tel" formControlName="mobileNumber" required (keypress)="keyPressNumbers($event)" (change)="checkMobileNo($event.target.value)"
+         [ngClass]="{ 'is-invalid': submitted && fClient.mobileNumber.invalid, 'is-valid': fClient.mobileNumber.valid  }" minlength="9" maxlength="12"/>
+         <div *ngIf="loginRes.status" class="text-danger">{{loginRes.message}}</div>
+         <!-- <div *ngIf="loginRes">Moblie number already exists</div> -->
+        <div *ngIf="submitted && fClient.mobileNumber.invalid" class="text-danger">
+          <div class="errorMsg" *ngIf="fClient.mobileNumber.errors.required">Moblie Number is required</div>
+          <div *ngIf="fClient.mobileNumber.errors.minlength">Moblie number should be 9 to 12 digits</div>
+        </div>
+        <label class="input-label">Height(cm) <span style="color: red;">*</span></label>
+        <input placeholder="Height" type="number" formControlName="height" (keypress)="keyPressNumbers($event)"
+         [ngClass]="{ 'is-invalid': submitted && fClient.height.invalid, 'is-valid': fClient.height.valid  }">
+        <div *ngIf="submitted && fClient.height.errors" class="text-danger">
+          <div  class="errorMsg" *ngIf="fClient.height.errors.required">Enter a height</div>
+        </div>
+        <label class="input-label">Weight (kg) <span style="color: red;">*</span></label>
+        <input placeholder="Weight" type="number" formControlName="weight" (keypress)="keyPressNumbers($event)"
+         [ngClass]="{ 'is-invalid': submitted && fClient.weight.invalid, 'is-valid': fClient.weight.valid  }">
+        <div *ngIf="submitted && fClient.weight.errors" class="text-danger">
+          <div class="errorMsg" *ngIf="fClient.weight.errors.required">Enter a weight</div>
+        </div>
+        <label class="input-label">Date of Birth <span style="color: red;">*</span></label>
+        <ion-datetime locale="fr-FR" placeholder="Date of Birth" type="Date" displayFormat="DD-MMM-YYYY" formControlName="dob" (change)="getDate($event)" [max]="date"
+         [ngClass]="{ 'is-invalid': submitted && fClient.dob.invalid, 'is-valid': fClient.dob.valid  }"></ion-datetime>
+        <div *ngIf="submitted && fClient.dob.errors" class="text-danger">
+          <div class="errorMsg" *ngIf="fClient.dob.errors.required">Enter Date of Birth</div>
+        </div>
+        <label class="input-label">Select Team Leader</label>
+        <select formControlName="leadClientId" >
+          <option value="" selected>Select Team Leader</option>
+          <option *ngFor="let client of clients" value="{{client.clientId}}">{{client.clientName}}</option>
+        </select>
+        <!-- <div *ngIf="isEdit">
+          <ion-label>Activate Client</ion-label>&nbsp;
+          <input type="checkbox" checked="true" formControlName="isUser">
+        </div> -->
+        <button type="submit" [disabled]="loginRes.status">Submit</button>
+    </div>
+  </form>
+
+</ion-content>

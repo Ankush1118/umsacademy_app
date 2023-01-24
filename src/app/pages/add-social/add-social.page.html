@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="transparent-background">
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="user-image-wrapper">
+  <img src="assets/bjork-live.png">
+</div>
+<ion-content>
+
+  <div class="avatar-edit-wrapper">
+    <!--    <button class="bubble-button">-->
+    <!--      <img src="assets/icon/icon-pencil-line.svg">-->
+    <!--    </button>-->
+  </div>
+
+  <div class="user-info-wrapper">
+
+    <div class="logo-edit-wrapper">
+      <app-avatar-round size="100"
+                        imageUrl="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/541c1c101650903.5f2369bc9b544.jpg"></app-avatar-round>
+    </div>
+
+    <div class="user-info">
+      <h1 class="user-name">Mr. Anuj Chawla</h1>
+
+      <div class="icon-text-label">
+        <ion-icon name='business-outline' item-start></ion-icon>
+        <p>Company Name</p>
+      </div>
+
+      <div class="icon-text-label">
+        <ion-icon name='people-circle-outline' item-start></ion-icon>
+        <p>Director, CEO</p>
+      </div>
+      <div class="icon-text-label">
+        <ion-icon name='location-outline' item-start></ion-icon>
+        <p>Mumbai, India</p>
+      </div>
+    </div>
+
+
+    <div class="about-wrapper">
+      <h1 class="title">About</h1>
+      <p> Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing
+        layouts and visual mockups.</p>
+    </div>
+
+
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="heart">
+        <p style="text-align:center; ">
+          <ion-img src="../../../assets/addicon.svg"></ion-img>
+        </p>
+        <p style="text-transform: capitalize;text-align: center;font-size: 16px;">Add section</p>
+      </ion-segment-button>
+    </ion-segment>
+    <h6 style="text-align: center;color: #3880ff;font-size: 12px; ">POPTAGG TECHNOLOGIES PVT LTD</h6>
+  </div>
+
+</ion-content>
+
+

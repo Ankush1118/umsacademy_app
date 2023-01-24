@@ -1,0 +1,23 @@
+@import "src/theme/mixins";
+textarea, input {
+  -webkit-appearance: none !important;
+}
+
+.logo-wrapper{
+  width: 100%;
+  padding: 20px;
+  @include flex-center();
+  flex-direction: column;
+  background: var(--ion-color-light);
+  margin-top: 10px;
+  padding-bottom: 90px;
+  border-top: 1px solid var(--shade-one);
+  p{
+    margin: 0;
+    color: var(--shade-two);
+    font-weight: normal;
+  }
+  img{
+    width: 140px;
+  }
+}

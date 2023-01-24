@@ -1,0 +1,23 @@
+<div class="user-view-wrapper">
+  <!-- <div class="avatar-wrapper">
+    <app-avatar-round size="60" bubbleSize="20" iconUrl=""></app-avatar-round>
+  </div> -->
+  <div class="info-wrapper">
+    <div class="name-time-row">
+      <div class="icon-label-view">
+        <p>{{clientPlan?.planName}}</p>
+      </div>
+    </div>
+    <div class="icon-label-view">
+        <p>Validity-{{clientPlan?.validity}} days</p>
+    </div>
+    <div class="icon-label-view">
+      <p> Price-₹{{clientPlan?.price}}  </p>
+  </div>
+
+    <div class="action-buttons pull-right">
+      <ion-button  size="small" color="primary" (click)="editClientPlantModel(clientPlan)"><ion-icon src="assets/icon/icon-pencil-line.svg"></ion-icon></ion-button>
+      <ion-button size="small"  color="danger" (click)="activate(clientPlan)" ><ion-icon name="trash-outline"></ion-icon></ion-button> 
+    </div>
+  </div>
+</div>

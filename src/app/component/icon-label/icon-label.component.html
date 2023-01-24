@@ -1,0 +1,11 @@
+<div class="icon-label-view" [class.checked]="isChecked">
+  <button *ngIf="isEditMode" (click)="editClicked()" class="edit-button">
+    <ion-icon src="assets/icon/icon-pencil-line.svg"></ion-icon>
+  </button>
+  <div class="icon">
+    <ion-icon class="check-icon" name="checkmark-circle" *ngIf="isChecked"></ion-icon>
+    <img *ngIf="image" src="{{image}}" (error)="imageError()">
+    <ion-icon *ngIf="icon" name="{{icon}}"></ion-icon>
+  </div>
+  <p class="label">{{label}}</p>
+</div>

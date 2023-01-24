@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>Account Settings</ion-list-header>
+    <ion-item>Change Password</ion-item>
+    <ion-item (click)="changeUserName()">Change Username</ion-item>
+    <ion-item>Leads Export</ion-item>
+    <ion-list-header>Booking Appointment</ion-list-header>
+    <ion-item>Calendar Link</ion-item>
+    <ion-item>Zoom/google meet integration</ion-item>
+    <ion-list-header>Features</ion-list-header>
+    <ion-item>Zoom Backgrounds</ion-item>
+    <div class="row-dark-mode">
+      <h1>Dark Mode</h1>
+      <ion-segment value="1">
+        <ion-segment-button value="1">Auto</ion-segment-button>
+        <ion-segment-button value="2">Light</ion-segment-button>
+        <ion-segment-button value="3">Dark</ion-segment-button>
+      </ion-segment>
+    </div>
+    <ion-list-header>Netbugs Teams/Corporates</ion-list-header>
+    <ion-item>Not activated</ion-item>
+    <ion-list-header>Support</ion-list-header>
+    <ion-item>FAQs</ion-item>
+    <ion-item>Support</ion-item>
+    <ion-item>Device Compatibility</ion-item>
+    <ion-item>App Version 1.0 (0)</ion-item>
+
+  </ion-list>
+
+  <app-footer-poptagg></app-footer-poptagg>
+</ion-content>
+
+<ion-footer>
+  <app-tabs></app-tabs>
+</ion-footer>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="closeModal()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="header-wrapper">
+    <h3>Rs. {{amount}} to be proceed to add</h3>
+  </div>
+
+
+  <form [formGroup]="walletTransactionForm" (ngSubmit)="saveWalletTransaction()">
+    <div class="form-wrapper">
+        <input type="hidden" formControlName="transactionId">
+        <label class="input-label" for="name">Amount <span style="color: red;">*</span></label>
+        <input type="text" placeholder="Amount" formControlName="amount" disabled="true">
+        <label class="input-label" for="name">Select Payment Mode: <span style="color: red;">*</span></label>
+        <ion-select class="status-wrapper" (ionChange)="checkMode($event.target.value)" formControlName="paymentMode" placeholder="Payment Mode">
+          <ion-select-option text-left value="cash">Cash</ion-select-option>
+          <ion-select-option text-left value="online">Online</ion-select-option>
+        </ion-select>
+        <label class="input-label" for="name" *ngIf="isOnline">Transaction Reference No: <span style="color: red;">*</span></label>
+        <input placeholder="Transaction Reference No" type="text" *ngIf="isOnline" formControlName="transactionNo">
+        <button type="submit">Submit</button>
+    </div>
+  </form>
+
+</ion-content>

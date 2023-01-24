@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <app-title-line-action title="Register"></app-title-line-action>
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+<!--<form [formGroup]="userForm" (ngSubmit)="signup()">-->
+<!--  <div class="register-form-wrapper">-->
+<!--    <div class="input-wrapper">-->
+<!--      <ion-icon name="person-outline"></ion-icon>-->
+<!--      <input placeholder="Name" formControlName="displayName">-->
+<!--    </div>-->
+<!--    <div class="input-wrapper">-->
+<!--      <ion-icon name="mail-outline"></ion-icon>-->
+<!--      <input placeholder="Email" type="email" formControlName="email">-->
+<!--    </div>-->
+<!--    <div class="input-wrapper">-->
+<!--      <ion-icon name="lock-closed-outline"></ion-icon>-->
+<!--      <input placeholder="Password" type="{{isShowPassword ? 'text' :'password'}}" formControlName="password">-->
+<!--      <ion-icon name="{{isShowPassword ? 'eye-outline' :'eye-off-outline'}}" (click)="toggleShowHidePassword()"></ion-icon>-->
+<!--    </div>-->
+
+<!--    <ion-button type="submit" expand="full" shape="round" color="dark">REGISTER</ion-button>-->
+
+<!--  </div>-->
+<!--</form>-->
+
+
+  <div class="line-form-wrapper">
+    <div class="input-wrapper">
+      <ion-icon name="person-outline"></ion-icon>
+      <input placeholder="Name" [(ngModel)]="email">
+    </div>
+    <div class="input-wrapper">
+      <ion-icon name="mail-outline"></ion-icon>
+      <input placeholder="Email" [(ngModel)]="email">
+    </div>
+    <div class="input-wrapper">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input placeholder="Password" (focusin)="toggleKeyboardActive(true)" (focusout)="toggleKeyboardActive(false)" type="{{isShowPassword ? 'text' :'password'}}" [(ngModel)]="password">
+      <ion-icon name="{{isShowPassword ? 'eye-outline' :'eye-off-outline'}}"
+                (click)="toggleShowHidePassword()"></ion-icon>
+    </div>
+
+    <p class="forgot-password"></p>
+
+    <button class="submit-button" (click)="fireLogin()">
+      Register
+    </button>
+  </div>
+
+
+
+  <div class="social-login-wrapper">
+    <button class="social-login-button">
+      <img src="assets/google-icon.svg">
+    </button>
+    <button class="social-login-button">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png">
+    </button>
+  </div>
+
+</ion-content>
+
+

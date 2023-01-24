@@ -1,0 +1,14 @@
+<div class="filter-wrapper">
+  <div class="search-wrapper">
+    <input placeholder="Search" [(ngModel)]="value" (keyup)="inputChange()">
+    <button>
+      <ion-icon name="search"></ion-icon>
+    </button>
+  </div>
+    <div class="date-wrapper">
+      <ion-datetime placeholder="Date" [(ngModel)]="mealDate" (ionChange)="dateChangeFunction()" ></ion-datetime>
+      <button>
+        <ion-icon name="calendar"></ion-icon>
+      </button> 
+    </div>
+</div>

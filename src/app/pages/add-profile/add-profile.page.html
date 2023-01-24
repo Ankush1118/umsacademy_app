@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <app-title-line-action title="Profile Settings"></app-title-line-action>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <form [formGroup]="userForm" (ngSubmit)="saveProfile()">
+    <div class="form-wrapper">
+      <label class="input-label">Display Name <span style="color: red;">*</span></label>
+      <input placeholder="Name" formControlName="displayName" required
+       [ngClass]="{ 'is-invalid': submitted && fUser.displayName.invalid, 'is-valid': fUser.displayName.valid  }">
+      <div *ngIf="submitted && fUser.displayName.invalid" class="text-danger">
+        <div *ngIf="fUser.displayName.errors.required">Display Name is required</div>
+      </div>
+      <label class="input-label">Organization <span style="color: red;">*</span></label>
+      <input placeholder="Company" formControlName="organization" required
+       [ngClass]="{ 'is-invalid': submitted && fUser.organization.invalid, 'is-valid': fUser.organization.valid  }">
+      <div *ngIf="submitted && fUser.organization.invalid" class="text-danger">
+        <div *ngIf="fUser.organization.errors.required">Organization is required</div>
+      </div> 
+      <label class="input-label">Designation <span style="color: red;">*</span></label>
+      <input placeholder="Designation" formControlName="designation" required
+       [ngClass]="{ 'is-invalid': submitted && fUser.designation.invalid, 'is-valid': fUser.designation.valid  }">
+      <div *ngIf="submitted && fUser.designation.invalid" class="text-danger">
+        <div *ngIf="fUser.designation.errors.required">Designation is required</div>
+      </div>
+      <label class="input-label">Location <span style="color: red;">*</span></label>
+      <input placeholder="Location" formControlName="location"  required
+       [ngClass]="{ 'is-invalid': submitted && fUser.location.invalid, 'is-valid': fUser.location.valid  }">
+      <div *ngIf="submitted && fUser.location.invalid" class="text-danger">
+        <div *ngIf="fUser.location.errors.required">Location is required</div>
+      </div>
+      <label class="input-label">Personal Bio <span style="color: red;">*</span></label>
+      <textarea placeholder="Personal Bio" formControlName="aboutUs"></textarea>
+      <label class="input-label">Business Bio <span style="color: red;">*</span></label>
+      <textarea placeholder="Business Bio"></textarea>
+    </div>
+
+    <div class="save-button-wrap">
+      <ion-button type="submit" color="primary">Save</ion-button>
+    </div>
+  </form>
+</ion-content>

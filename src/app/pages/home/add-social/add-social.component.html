@@ -1,0 +1,55 @@
+
+<ion-content fullscreen class="ion-padding" scroll-y="false" class="bg-class">
+
+    <ion-toolbar>
+      <ion-segment (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="camera">
+          <ion-img src="../../../assets/youtube-home.svg"></ion-img>
+          <div class="edit-profile-button">
+          <ion-img src="../../../assets/edit-profile-button.svg"></ion-img>
+        </div>
+        </ion-segment-button>
+      </ion-segment>
+      
+      <h3 style="text-align: center; text-transform: capitalize;"> Youtube </h3>
+      
+      
+    </ion-toolbar>
+    
+  
+    <ion-searchbar></ion-searchbar>
+    <p style="text-align: center; text-transform: capitalize; font-size: 13px;"> Channel Link: Go to your channel. Tap three dots<br>on the top right corner of the app, click on <br>share and copy link and past it here in the box </p>
+    
+    
+    
+    <ion-toolbar>
+      <ion-segment value="all">
+        <ion-segment-button value="Active">
+          Active
+        </ion-segment-button>
+        <ion-segment-button value="Stealth">
+          Stealth
+        </ion-segment-button>
+        <ion-segment-button value="Both">
+          Both
+        </ion-segment-button>
+        
+      </ion-segment>
+    </ion-toolbar>
+  
+  
+    <ion-toolbar>
+      <ion-segment value="all">
+        <ion-segment-button value="Delete">
+          Delete
+        </ion-segment-button>
+        <ion-segment-button value="Save">
+          Save
+        </ion-segment-button>
+        
+        
+      </ion-segment>
+    </ion-toolbar>
+  
+  
+  </ion-content>

@@ -1,0 +1,72 @@
+@import "src/theme/mixins";
+.icon-label-view{
+  @include flex-center();
+  flex-direction: column;
+  margin: 5px;
+  position: relative;
+  cursor: pointer;
+  .icon{
+    @include squarify(130px);
+    @include flex-center();
+    @include roundify(22px);
+    @include shadow-light-1();
+    padding: 15px;
+    display: inline;
+    background: var(--ion-color-light);
+    .price{
+      text-align: center;
+      font-size: 16px;
+      color: var(--shade-two);
+      font-weight: bold;
+      margin: 10px 0 0 0;
+    }
+    .validity{
+      text-align: center;
+      font-size: 15px;
+      color: var(--shade-two);
+      font-weight: normal;
+      margin: 10px 0 0 0;
+    }
+    .label{
+      text-align: center;
+      font-size: 12px;
+      color: var(--shade-two);
+      font-weight: normal;
+      margin: 10px 0 0 0;
+    }
+
+    
+  }
+  .edit-button{
+    @include flex-center();
+    @include circlfy(30px);
+    @include shadow-light();
+    background: white;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 0;
+    color: var(--shade-three);
+    ion-icon{
+      font-size: 14px;
+    }
+  }
+  
+  
+}
+
+.checked{
+  
+  .icon{
+    position: relative;
+    border: 2px solid var(--ion-color-success);
+  }
+  .check-icon{
+    position: absolute;
+    color : var(--ion-color-success);
+    right : 2px;
+    top: 2px;
+    font-size: 25px !important;
+  }
+
+}

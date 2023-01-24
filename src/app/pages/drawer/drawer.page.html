@@ -1,0 +1,41 @@
+<ion-header>
+</ion-header>
+<ion-content>
+
+  <div class="avatar-wrapper">
+    <app-avatar-round size="150"></app-avatar-round>
+  </div>
+
+  <h2 style="text-align: center; font-weight: bold;">{{user?.firstName}} {{user?.lastName}}</h2>
+
+  <!-- <ion-segment [(ngModel)]="user.mode" (ionChange)="changeProfileMode()">
+    <ion-segment-button value="0">Personal</ion-segment-button>
+    <ion-segment-button value="2">Lock</ion-segment-button>
+    <ion-segment-button value="1">Business</ion-segment-button>
+  </ion-segment> -->
+  <br>
+  <div class="options-row">
+    <app-circle-icon-button icon="diamond-outline" label="Upgrade Plan" (click)="openBranchPlan()"></app-circle-icon-button>
+    <app-circle-icon-button icon="person-outline" (click)="fun.navigate('edit-profile')" label="Edit Profile"></app-circle-icon-button>
+    <app-circle-icon-button icon="people-outline" (click)="fun.navigate('deleted-clients')" label="Deleted Clients"></app-circle-icon-button>
+  </div>
+  <div class="options-row">
+    <app-circle-icon-button (click)="logout()" icon="power-outline" label="Logout"></app-circle-icon-button>
+  </div>
+
+  <br>
+  <!-- <ion-row>
+    <ion-col align="center">
+      <ion-button shape="round" color="dark" (click)="fun.navigate('setting')">Settings</ion-button>
+    </ion-col>
+  </ion-row> -->
+  <br><br><br>
+
+  <!-- <p class="company-label">Netbugs Solutions and Services</p> -->
+  <div class="terms-label">
+    <a>Terms of use</a> & <a>Privacy Policy</a>
+  </div>
+
+</ion-content>
+
+

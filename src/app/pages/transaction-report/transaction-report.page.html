@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <app-title-line-action title="Transaction Report"></app-title-line-action>
+  </ion-toolbar>
+  <app-transaction-filter-bar  [(value)]="searchInput" [(purchaseDate)]="purchaseDatetime" (loadClients)="getAllSubscription()"></app-transaction-filter-bar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    
+      <!-- <app-transaction-view *ngFor="let subscription of subscriptions" [subscription]="subscription" [hidden]="checkSearch(subscription)" (refresh)="refresh()"></app-transaction-view> -->
+     
+  </ion-list>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addClientModel()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+
+</ion-content>

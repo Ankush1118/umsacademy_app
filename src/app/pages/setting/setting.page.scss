@@ -1,0 +1,36 @@
+@import "src/theme/mixins";
+
+ion-list-header{
+  font-size: 16px;
+  border-bottom: 1px solid var(--shade-one);
+  padding: 10px 16px;
+}
+
+
+ion-item{
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--shade-three);
+}
+
+ion-item::part(native){
+  padding-right: 20px;
+}
+
+
+@include ion-match-segment();
+
+
+.row-dark-mode{
+  @include flex-row-between();
+  padding: 8px 20px;
+  border-bottom: 1px solid var(--shade-one);
+  h1{
+    margin: 0;
+    font-size: 12px;
+  }
+  ion-segment{
+    width: 250px;
+    margin: 0;
+  }
+}

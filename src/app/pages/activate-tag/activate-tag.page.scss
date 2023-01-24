@@ -1,0 +1,53 @@
+@import "src/theme/mixins";
+
+.tags-list{
+  padding: 20px 0;
+}
+
+.add-tag-button{
+  @include safe-frame();
+  margin: 15px auto;
+  @include shadow-light();
+  @include roundify(22px);
+  background: var(--ion-color-light);
+  @include flex-center();
+  padding: 4px;
+  font-size: 32px;
+  border: 1px solid var(--shade-one);
+}
+.tag-edit-wrapper{
+  @include safe-frame();
+  margin: 10px auto;
+  @include flex-row-between();
+  .name-wrapper{
+    @include flex-row-between();
+    @include shadow-light();
+    @include roundify(22px);
+    background: var(--ion-color-light);
+    flex: 1;
+    margin-right: 5px;
+    border: 1px solid var(--shade-one);
+    p{
+      padding: 0 20px;
+      font-size: 14px;
+      margin: 0;
+    }
+
+  }
+
+  button{
+    @include flex-center();
+    @include circlfy(44px);
+    @include shadow-light();
+    background: var(--ion-color-light);
+    ion-icon{
+      font-size: 22px;
+    }
+  }
+
+  .delete-button{
+    ion-icon{
+      color: var(--ion-color-danger);
+    }
+  }
+}
