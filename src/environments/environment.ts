@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  url: 'https://sadmin.umscenter.com/api/index.php/',
-  uploadUrl: 'https://sadmin.umscenter.com/api/uploads/',
-  logoPreUrl: "https://sadmin.umscenter.com/api/uploads/logos/",
+  url: 'https://academy.umscenter.com/api/index.php/',
+  uploadUrl: 'https://academy.umscenter.com/api/uploads/',
+  logoPreUrl: "https://academy.umscenter.com/api/uploads/logos/",
 
    //url: 'http://localhost/ums-api/api/index.php/',
   // uploadUrl: 'http://localhost/ums-api/api/uploads/',
